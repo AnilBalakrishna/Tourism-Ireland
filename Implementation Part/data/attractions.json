@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1a2b3c4d-5e6f-7g8h-9i0j",
+        "name": "Cliffs of Moher",
+        "location": "County Clare",
+        "description": "The Cliffs of Moher are sea cliffs located at the southwestern edge of the Burren region in County Clare, Ireland. They rise 120 meters (390 ft) above the Atlantic Ocean at Hag's Head and reach their maximum height of 214 meters (702 ft) just north of O'Brien's Tower, eight kilometers to the north. The cliffs receive around 1.5 million visitors a year.",
+        "rating": 4.9,
+        "image_url": "https://images.ireland.com/media/Images/destinations/county/Clare/3a78caab4f9b4ef29ef0527da0231b36.webp",
+        "website": "https://www.cliffsofmoher.ie/",
+        "created_at": "2025-01-01T10:00:00"
+    },
+    {
+        "id": "2b3c4d5e-6f7g-8h9i-0j1k",
+        "name": "Giant's Causeway",
+        "location": "County Antrim, Northern Ireland",
+        "description": "The Giant's Causeway is an area of about 40,000 interlocking basalt columns, the result of an ancient volcanic fissure eruption. It is located in County Antrim on the north coast of Northern Ireland, about three miles northeast of the town of Bushmills. It was declared a World Heritage Site by UNESCO in 1986.",
+        "rating": 4.8,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Causeway-code_poet-4.jpg",
+        "website": "https://www.nationaltrust.org.uk/giants-causeway",
+        "created_at": "2025-01-05T11:30:00"
+    },
+    {
+        "id": "3c4d5e6f-7g8h-9i0j-1k2l",
+        "name": "Guinness Storehouse",
+        "location": "Dublin",
+        "description": "The Guinness Storehouse is a tourist attraction at St. James's Gate Brewery in Dublin, Ireland. Since opening in 2000, it has received over 20 million visitors. The Storehouse covers seven floors surrounding a glass atrium shaped in the form of a pint of Guinness. The ground floor introduces the beer's four ingredients, and the brewery's founder, Arthur Guinness.",
+        "rating": 4.5,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Guinness_Storehouse_exterior_3.jpg",
+        "website": "https://www.guinness-storehouse.com/",
+        "created_at": "2025-01-10T09:15:00"
+    },
+    {
+        "id": "4d5e6f7g-8h9i-0j1k-2l3m",
+        "name": "Trinity College and the Book of Kells",
+        "location": "Dublin",
+        "description": "Trinity College Dublin is Ireland's oldest university, founded in 1592. Its Library houses the famous Book of Kells, an illuminated manuscript Gospel book in Latin, containing the four Gospels of the New Testament together with various prefatory texts and tables. It was created in a Columban monastery in either Britain or Ireland and may have had contributions from various Columban institutions.",
+        "rating": 4.7,
+        "image_url": "https://www.visittrinity.ie/wp-content/uploads/2024/07/Gaia-1_Credit-Barry-McCall4.jpg?resize=1440,960",
+        "website": "https://www.tcd.ie/visitors/book-of-kells/",
+        "created_at": "2025-01-15T14:45:00"
+    },
+    {
+        "id": "6f7g8h9i-0j1k-2l3m-4n5o",
+        "name": "Blarney Castle and Stone",
+        "location": "County Cork",
+        "description": "Blarney Castle is a medieval stronghold in Blarney, near Cork, Ireland. The castle was built nearly 600 years ago by one of Ireland's greatest chieftains, Cormac MacCarthy. Millions of people have climbed the steps to kiss the Blarney Stone, which according to legend, gives the gift of eloquence, or 'the gift of the gab' to those who kiss it.",
+        "rating": 4.6,
+        "image_url": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/91/53/cc.jpg",
+        "website": "https://www.blarneycastle.ie/",
+        "created_at": "2025-01-25T10:10:00"
+    },
+    {
+        "id": "7g8h9i0j-1k2l-3m4n-5o6p",
+        "name": "Kilmainham Gaol",
+        "location": "Dublin",
+        "description": "Kilmainham Gaol is a former prison in Kilmainham, Dublin, Ireland. It was first built in 1796 and played an important part in Irish history, as many leaders of Irish rebellions were imprisoned and executed here. The prison was closed in 1924. Today, the building houses a museum on the history of Irish nationalism and offers guided tours of the prison.",
+        "rating": 4.7,
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Kilmainham_Gaol_Main_Hall_2016-06-03.jpg",
+        "website": "http://kilmainhamgaolmuseum.ie/",
+        "created_at": "2025-01-30T15:30:00"
+    },
+    {
+        "id": "8h9i0j1k-2l3m-4n5o-6p7q",
+        "name": "Newgrange",
+        "location": "County Meath",
+        "description": "Newgrange is a prehistoric monument located in County Meath, Ireland. It was built during the Neolithic period, around 3200 BC, making it older than Stonehenge and the Egyptian pyramids. The site consists of a large circular mound with a stone passageway and interior chambers. The mound has a diameter of 85 meters (279 ft) and is surrounded by 97 large kerbstones, some of which are engraved with megalithic art.",
+        "rating": 4.9,
+        "image_url": "https://voicesfromthedawn.com/wp-content/sites/newgrange/newgrangeVRloader.jpg",
+        "website": "https://www.newgrange.com/",
+        "created_at": "2025-02-01T12:00:00"
+    },
+    {
+        "id": "9i0j1k2l-3m4n-5o6p-7q8r",
+        "name": "The Burren",
+        "location": "County Clare",
+        "description": "The Burren is a region in County Clare, Ireland. It is dominated by karst landscape and measures approximately 250 square kilometers. The region is bounded by the Atlantic Ocean and Galway Bay on the west and north respectively. The name 'Burren' comes from an Irish word meaning 'great rock'. It is one of the largest karst landscapes in Europe.",
+        "rating": 4.7,
+        "image_url": "https://th.bing.com/th/id/OSK.HERO6VNo-VqIb7mHrog3mWG0nBKLmrwgC-HJKDKTmP7XZnk?rs=1&pid=ImgDetMain",
+        "website": "https://www.burrennationalpark.ie/",
+        "created_at": "2025-02-05T11:45:00"
+    },
+    {
+        "id": "0j1k2l3m-4n5o-6p7q-8r9s",
+        "name": "Titanic Belfast",
+        "location": "Belfast, Northern Ireland",
+        "description": "Titanic Belfast is a visitor attraction and monument to Belfast's maritime heritage, located on the site of the former Harland & Wolff shipyard in the city's Titanic Quarter. It tells the stories of the ill-fated RMS Titanic, which sank on her maiden voyage in 1912, and her sister ships RMS Olympic and HMHS Britannic. The building contains more than 130,000 square feet of floor space, most of which is occupied by a series of galleries, plus private function rooms and community facilities.",
+        "rating": 4.8,
+        "image_url": "https://rics.scene7.com/is/image/rics/Modus_may222_titanicbelfast_exterior_homepage?$article-big-img-desktop$&op_sharpen=1",
+        "website": "https://www.titanicbelfast.com/",
+        "created_at": "2025-02-10T16:30:00"
+    }
+]

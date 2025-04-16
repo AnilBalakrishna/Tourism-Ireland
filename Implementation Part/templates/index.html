@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="hero-section rounded mb-4">
+            <div class="hero-content text-center text-white p-5">
+                <h1 class="display-4 fw-bold">Discover the Island of Ireland</h1>
+                <p class="lead">Explore breathtaking landscapes, historic castles, and vibrant culture</p>
+                <div class="hero-buttons mt-4">
+                    <button class="btn btn-success btn-lg me-2" id="addFirstAttractionBtn">
+                        <i class="fas fa-plus"></i> Add New Attraction
+                    </button>
+                    <a href="#attractionsList" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-map-marked-alt"></i> Explore Attractions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="row mb-5 counter-section">
+    <div class="col-md-4 mb-3 mb-md-0">
+        <div class="card border-0 shadow-sm h-100 counter-card">
+            <div class="card-body text-center">
+                <i class="fas fa-euro-sign fa-3x mb-3"></i>
+                <h3 class="counter">€6.4 Billion</h3>
+                <p class="text-muted">Value of overseas tourism to Ireland in 2023</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3 mb-md-0">
+        <div class="card border-0 shadow-sm h-100 counter-card">
+            <div class="card-body text-center">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h3 class="counter">300,000</h3>
+                <p class="text-muted">Jobs supported across the island</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100 counter-card">
+            <div class="card-body text-center">
+                <i class="fas fa-globe-europe fa-3x mb-3"></i>
+                <h3 class="counter">14</h3>
+                <p class="text-muted">Global markets with marketing programs</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="row mb-5 about-section" id="about">
+    <div class="col-md-12">
+        <div class="card about-card">
+            <div class="card-body p-4">
+                <h2 class="section-title mb-4">About Tourism Ireland</h2>
+                <p>Tourism Ireland is responsible for marketing the island of Ireland overseas as a holiday and business tourism destination. Our remit is to increase tourism to the island of Ireland and to support Northern Ireland to realise its tourism potential.</p>
+                <p>We operate under the auspices of the North South Ministerial Council through the Department for the Economy in Northern Ireland and the Department of Enterprise, Tourism and Employment in Ireland. We work closely with the two tourist boards on the island, Fáilte Ireland and Tourism NI, and with our partners in the tourism industry at home and abroad in delivering on our remit.</p>
+                <p>Tourism Ireland's team of 168 staff create world-class marketing programmes in 14 markets across Great Britain, North America, Mainland Europe and Australia, as well as centrally in Dublin and Coleraine.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Search and Sort Section -->
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body">
+                <h2 class="section-title">Ireland's Tourist Attractions</h2>
+                <p class="lead text-center mb-4">Explore and manage Ireland's most beautiful destinations</p>
+                
+                <div class="search-sort-container row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="input-group">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Search attractions...">
+                            <button class="btn btn-primary" id="searchBtn">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <select id="sortSelect" class="form-select">
+                                <option value="name">Sort by Name</option>
+                                <option value="location">Sort by Location</option>
+                                <option value="rating">Sort by Rating</option>
+                                <option value="created_at">Sort by Date Added</option>
+                            </select>
+                            <select id="orderSelect" class="form-select">
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                            <button class="btn btn-secondary" id="sortBtn">
+                                <i class="fas fa-sort"></i> Sort
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Attractions List -->
+<div class="row" id="attractionsList">
+    <!-- Attractions will be dynamically added here -->
+    <div class="col-12 text-center" id="loadingIndicator">
+        <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Loading Ireland's stunning attractions...</p>
+    </div>
+    <div class="col-12 text-center d-none" id="noAttractionsMessage">
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle fa-2x mb-3"></i>
+            <h4>No attractions found</h4>
+            <p>There are no attractions matching your search criteria. Please try a different search or add a new attraction.</p>
+            <button class="btn btn-success" id="createNewBtn">
+                <i class="fas fa-plus"></i> Add Your First Attraction
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Create/Edit Modal -->
+<div class="modal fade" id="attractionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Add New Attraction</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="attractionForm">
+                    <input type="hidden" id="attractionId">
+
+                    <div class="mb-3">
+                        <label for="attractionName" class="form-label">Name *</label>
+                        <input type="text" class="form-control" id="attractionName" required>
+                        <div class="invalid-feedback">Please enter a name for the attraction.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="attractionLocation" class="form-label">Location *</label>
+                        <input type="text" class="form-control" id="attractionLocation" required>
+                        <div class="invalid-feedback">Please enter a location.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="attractionDescription" class="form-label">Description *</label>
+                        <textarea class="form-control" id="attractionDescription" rows="3" required></textarea>
+                        <div class="invalid-feedback">Please enter a description.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="attractionRating" class="form-label">Rating (0-5) *</label>
+                        <input type="number" class="form-control" id="attractionRating" min="0" max="5" step="0.1" required>
+                        <div class="invalid-feedback">Please enter a valid rating between 0 and 5.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="attractionImage" class="form-label">Image URL</label>
+                        <input type="url" class="form-control" id="attractionImage">
+                        <div class="invalid-feedback">Please enter a valid URL.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="attractionWebsite" class="form-label">Website</label>
+                        <input type="url" class="form-control" id="attractionWebsite">
+                        <div class="invalid-feedback">Please enter a valid URL.</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="saveAttractionBtn">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete "<span id="deleteAttractionName"></span>"?</p>
+                <p class="text-danger">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success/Error Alert Template -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="alertToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto" id="toastTitle"></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="toastMessage"></div>
+    </div>
+</div>
+{% endblock %}
